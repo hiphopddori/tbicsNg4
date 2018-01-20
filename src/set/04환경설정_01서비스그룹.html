@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>T-BICS</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+	<link href="assets/css/common.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout_top.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/jstree.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<h1 class="fl"><span>T-BICS  B2B Integrated Control System</span></h1>
+			<nav class="mu-gnb fl">
+				<!-- Depth1 -->
+				<ul class="mu-h-menu fl">
+					<li class="active"><a href="#"><span>B2B 감시</span></a><!-- 현재 메뉴 위치 class="active" 추가 -->
+						<!-- Depth2 -->
+						<ul class="mu-list">
+							<li><a href="#"><span>서비스 그룹 감시</span></a></li>
+							<li class="active"><a href="#"><span>사업장 감시</span></a></li><!--  현재 메뉴 위치 class="active" 추가 -->
+							<li><a href="#"><span>전자발찌 집중 감시</span></a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>B2B 분석</span></a>
+						<ul class="mu-list">
+							<li><a href="#"><span>서비스 그룹 분석</span></a></li>
+							<li><a href="#"><span>사업장 분석</span></a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>현황조회</span></a>
+						<ul class="mu-list">
+							<li><a href="#"><span>단말기</span></a></li>
+							<li><a href="#"><span>사업장</span></a></li>
+							<li><a href="#"><span>서비스</span></a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>환경설정</span></a>
+						<ul class="mu-list">
+							<li><a href="#"><span>서비스 그룹</span></a></li>
+							<li><a href="#"><span>서비스 임계치</span></a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>관리자</span></a>
+						<ul class="mu-list">
+							<li><a href="#"><span>사용자 관리</span></a></li>
+							<li><a href="#"><span>로그인 이력</span></a></li>
+							<li><a href="#"><span>SMS 인증 이력</span></a></li>
+						</ul>
+					</li>
+					<div class="mu-h-smenu"></div>
+				</ul>
+				<div class="mu-top-menu fr">
+					<div class="user-info"><i class="mu-icon-img user"></i>admin</div>
+					<button type="button" class="mu-btn btn-logout">Logout</button>
+				</div>
+			</nav>
+		</header>
+		<div class="mu-container">
+			<section>
+
+				<div class="mu-all-container">
+					<ul class="mu-tab">
+						<li class="active"><a href="">서비스 그룹</a></li><!-- class="active" -->
+						<li><a href="">사업장(서비스) 임계치</a></li>
+					</ul>
+
+					<div class="mu-tab-body">
+						<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-add"></i>그룹 가져오기</button>
+						<!-- 1번째 Tab 내용 -->
+						<div class="mu-tabCont" style="">
+
+							<div class="mu-left-container service-group">
+								<div class="mu-vgroup">
+									<h3>서비스 그룹<button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img refresh"></i></button></h3>
+									<div class="date-wrap">
+										<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-add"></i>그룹 추가</button>
+										<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-edit"></i>그룹 수정</button>
+										<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-delete"></i>그룹 삭제</button>
+									</div>
+								</div>
+								<div class="mu-vgroup service-tree">
+									<!-- tree + scroll -->
+									<div class="mu-tree-menu mu-scroll-v">
+										<ul>
+											<li>AMI (지능형원격검침)
+												<ul>
+													<li>도시가스 검침
+														<ul>
+															<li>한국전력공사 (111-34-12345)</li>
+															<li>APT 검침 주식회사 (333-34-10122)</li>
+														</ul>
+													</li>
+													<li>수도 검침
+														<ul>
+															<li>한국전력공사 (111-34-12345)</li>
+															<li>APT 검침 주식회사 (333-34-10122)</li>
+														</ul>
+													</li>
+													<li>한전 APT 검침
+														<ul>
+															<li>한국전력공사 (111-34-12345)</li>
+															<li>APT 검침 주식회사 (333-34-10122)</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li>IT 서비스
+												<ul>
+													<li>2222222222
+														<ul>
+															<li>33333333333</li>
+															<li>33333333333</li>
+														</ul>
+													</li>
+													<li>2222222222
+														<ul>
+															<li>33333333333</li>
+															<li>33333333333</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li>IT 인프라
+												<ul>
+													<li>2222222222
+														<ul>
+															<li>33333333333</li>
+															<li>33333333333</li>
+														</ul>
+													</li>
+													<li>2222222222
+														<ul>
+															<li>33333333333</li>
+															<li>33333333333</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li>IT 인프라
+												<ul>
+													<li>2222222222</li>
+													<li>2222222222</li>
+													<li>2222222222</li>
+												</ul>
+											</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+											<li>IT 인프라</li>
+										</ul>
+									</div>
+									<!-- //tree + scroll -->
+								</div>
+							</div>
+							<div class="mu-right-container">
+								<div class="service-list">
+									<div class="service-wrap">
+										<div class="mu-grid-top">
+
+											<!--<div class="mu-search-group">
+												<div class="mu-search-item">
+													<div class="mu-item-group">
+														<label>서비스 명</label>
+														<input type="text" class="mu-input" placeholder="서비스 명">
+													</div>
+													<div class="mu-item-group">
+														<label>사업장 명</label>
+														<input type="text" class="mu-input" placeholder="사업장 명">
+													</div>
+												</div>
+												<div class="mu-search-btn">
+													<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img search"></i>조회</button>
+												</div>
+											</div>-->
+
+											
+											<div class="mu-item-group mu-search-item">
+												<div class="mu-title">서비스 명</div>
+												<input type="text" class="mu-input" placeholder="서비스 명">
+											</div>
+											<div class="mu-item-group mu-search-item">
+												<div class="mu-title">사업장 명</div>
+												<input type="text" class="mu-input" placeholder="사업장 명">
+											</div>
+											<div class="mu-item-group">
+												<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img search"></i>조회</button>
+											</div>
+											<div class="num">Total : 00건</div>
+										</div>
+										<!-- grid -->
+										<div class="mu-grid-scroll">
+											<table class="mu-grid">
+												<colgroup>
+													<col width="80">
+													<col>
+													<col width="180">
+												</colgroup>
+												<thead>
+													<tr>
+														<th>
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_all" />
+																<label for="ck_all"></label>
+															</div>
+														</th>
+														<th>서비스 명</th>
+														<th>관련 사업장 수</th>
+													</tr>
+												</thead>
+											</table>
+											<!-- scroll -->
+											<div class="mu-scroll-v">
+												<table class="mu-grid">
+													<colgroup>
+														<col width="80">
+														<col>
+														<col width="180">
+													</colgroup>
+													<tbody>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													<tr>
+														<td class="tc">
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_01" />
+																<label for="ck_01"></label>
+															</div>
+														</td>
+														<td>무선 원격 검침</td>
+														<td class="tc">999,999</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+											<!-- //scroll -->
+										</div>
+										<!-- //grid -->
+									</div>
+									<div class="btn-move">
+										<button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img next"></i></button>
+									</div>
+									<div class="service-wrap">
+										<div class="mu-grid-top">
+											<div class="mu-title"><i class="mu-icon-img folder"></i>그룹명 : AMI (지능형원격검침)</div>
+											<div class="mu-item-group fr">
+												<button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img trash"></i>삭제</button>
+											</div>
+											<div class="num">Total : 00건</div>
+										</div>
+										<!-- grid -->
+										<div class="mu-grid-scroll">
+											<table class="mu-grid">
+												<colgroup>
+													<col width="80">
+													<col>
+													<col width="180">
+												</colgroup>
+												<thead>
+													<tr>
+														<th>
+															<div class="mu-checkbox">
+																<input type="checkbox" id="ck_all" />
+																<label for="ck_all"></label>
+															</div>
+														</th>
+														<th>서비스 명</th>
+														<th>관련 사업장 수</th>
+													</tr>
+												</thead>
+											</table>
+											<!-- scroll -->
+											<div class="mu-scroll-v">
+												<table class="mu-grid">
+													<colgroup>
+														<col width="80">
+														<col>
+														<col width="180">
+													</colgroup>
+													<tbody>
+														<tr>
+															<td class="tc">
+																<div class="mu-checkbox">
+																	<input type="checkbox" id="ck_01" />
+																	<label for="ck_01"></label>
+																</div>
+															</td>
+															<td><span>무선 원격 검침</span></td>
+															<td class="tc">999,999</td>
+														</tr>
+														<tr>
+															<td class="tc">
+																<div class="mu-checkbox">
+																	<input type="checkbox" id="ck_01" />
+																	<label for="ck_01"></label>
+																</div>
+															</td>
+															<td><span>무선 원격 검침</span></td>
+															<td class="tc">999,999</td>
+														</tr>
+														<tr>
+															<td class="tc">
+																<div class="mu-checkbox">
+																	<input type="checkbox" id="ck_01" />
+																	<label for="ck_01"></label>
+																</div>
+															</td>
+															<td><span>무선 원격 검침</span></td>
+															<td class="tc">999,999</td>
+														</tr>
+														<tr>
+															<td class="tc">
+																<div class="mu-checkbox">
+																	<input type="checkbox" id="ck_01" />
+																	<label for="ck_01"></label>
+																</div>
+															</td>
+															<td><span>무선 원격 검침</span></td>
+															<td class="tc">999,999</td>
+														</tr>
+														<tr>
+															<td class="tc">
+																<div class="mu-checkbox">
+																	<input type="checkbox" id="ck_01" />
+																	<label for="ck_01"></label>
+																</div>
+															</td>
+															<td><span>무선 원격 검침</span></td>
+															<td class="tc">999,999</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<!-- //scroll -->
+										</div>
+										<!-- //grid -->
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- 2번째 Tab 내용 -->
+						<div class="mu-tabCont" style="display:none;">
+
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery-ui.js"></script>
+	<script src="assets/js/jstree.min.js"></script>
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
+	<script src="assets/js/common.js"></script>
+	<script type="text/javascript">
+	// scroll
+	$(function() {
+		//세로 스크롤
+		$('.mu-scroll-v').slimScroll({
+			color: '#6e6e6e',
+			size: '7px',
+			width: '100%',
+			height: '100%',
+			railVisible: false,
+			wheelStep: 1000,
+			railColor: '#000',
+			alwaysVisible: true,
+			axis: 'y'
+		});
+	});
+
+	// tree menu
+	$(function() {
+		$('.mu-tree-menu').jstree();
+		$('.mu-tree-menu').on("changed.jstree", function (e, data) {
+			console.log(data.selected);
+		});
+		$('button').on('click', function () {
+			$('.mu-tree-menu').jstree(true).select_node('child_node_1');
+			$('.mu-tree-menu').jstree('select_node', 'child_node_1');
+			$.jstree.reference('.mu-tree-menu').select_node('child_node_1');
+		});
+	});
+	</script>
+</body>
+</html>

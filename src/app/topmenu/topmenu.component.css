@@ -1,0 +1,18 @@
+a {
+    color: orangered;
+  }
+  
+  a:hover {
+    cursor: pointer;
+    color: blue;
+  }
+  
+  .menubar-item {
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .menubar-item a  {
+    margin: 10px 20px 10px 20px;
+  }

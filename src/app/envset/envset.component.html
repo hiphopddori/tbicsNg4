@@ -1,0 +1,242 @@
+<div class="mu-container">
+  <section>
+
+    <div class="mu-all-container">
+      <ul class="mu-tab">
+        <li class="active"><a href="">서비스 그룹</a></li><!-- class="active" -->
+        <li><a href="">사업장(서비스) 임계치</a></li>
+      </ul>
+
+      <div class="mu-tab-body">
+        <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-add"></i>그룹 가져오기</button>
+        <!-- 1번째 Tab 내용 -->
+        <div class="mu-tabCont">
+
+          <div class="mu-left-container service-group">
+            <div class="mu-vgroup">
+              <h3>서비스 그룹<button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img refresh"></i></button></h3>
+              <div class="date-wrap">
+                <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-add"></i>그룹 추가</button>
+                <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-edit"></i>그룹 수정</button>
+                <button type="button" class="mu-btn mu-btn-icon"><i class="mu-icon-img group-delete"></i>그룹 삭제</button>
+              </div>
+            </div>
+            <div class="mu-vgroup service-tree">
+              <!-- tree + scroll -->
+              <div class="mu-tree-menu mu-scroll-v">
+                <ul>
+                  <li>AMI (지능형원격검침)
+                    <ul>
+                      <li>도시가스 검침
+                        <ul>
+                          <li>한국전력공사 (111-34-12345)</li>
+                          <li>APT 검침 주식회사 (333-34-10122)</li>
+                        </ul>
+                      </li>
+                      <li>수도 검침
+                        <ul>
+                          <li>한국전력공사 (111-34-12345)</li>
+                          <li>APT 검침 주식회사 (333-34-10122)</li>
+                        </ul>
+                      </li>
+                      <li>한전 APT 검침
+                        <ul>
+                          <li>한국전력공사 (111-34-12345)</li>
+                          <li>APT 검침 주식회사 (333-34-10122)</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tree + scroll -->
+            </div>
+          </div>
+          <div class="mu-right-container">
+            <div class="service-list">
+              <div class="service-wrap">
+                <div class="mu-grid-top">
+
+               
+                  <div class="mu-item-group mu-search-item">
+                    <div class="mu-title">서비스 명</div>
+                    <input type="text" [(ngModel)]="cdService" class="mu-input" placeholder="서비스 명">
+                  </div>
+                  <div class="mu-item-group mu-search-item">
+                    <div class="mu-title">사업장 명</div>
+                    <input type="text" [(ngModel)]="cdWplnm" lass="mu-input" placeholder="사업장 명">
+                  </div>
+                  <div class="mu-item-group">
+                    <button type="button" (click)="onClickSetService()" class="mu-btn mu-btn-icon"><i class="mu-icon-img search"></i>조회</button>
+                  </div>
+                  <div class="num">Total : {{lstCd2Service.length}}건</div>
+                </div>
+                <!-- grid -->
+                <div class="mu-grid-scroll">
+                  <table class="mu-grid">
+                    <colgroup>
+                      <col width="80">
+                      <col>
+                      <col width="180">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="mu-checkbox">
+                            <input type="checkbox" id="ck_all" />
+                            <label for="ck_all"></label>
+                          </div>
+                        </th>
+                        <th>서비스 명</th>
+                        <th>관련 사업장 수</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <!-- scroll -->
+                  <div class="mu-scroll-v">
+                    <table class="mu-grid">
+                      <colgroup>
+                        <col width="80">
+                        <col>
+                        <col width="180">
+                      </colgroup>
+                      <tbody>
+                      <tr *ngFor="let item of lstCd2Service">
+                        <td class="tc">
+                          <div class="mu-checkbox">
+                            <input type="checkbox" id="{{item.svcCd}}" [(ngModel)]="item.checked" />
+                            <label for="{{item.svcCd}}"></label>
+                          </div>
+                        </td>
+                        <td (click)="onClickPopWpcl(item.svcCd,item.svcNm)">{{item.svcNm}}</td>
+                        <td class="tc">{{item.wplcCnt}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //scroll -->
+                </div>
+                <!-- //grid -->
+              </div>
+              <div class="btn-move">
+                <button type="button" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img next"></i></button>
+              </div>
+              <div class="service-wrap">
+                <div class="mu-grid-top">
+                  <div class="mu-title"><i class="mu-icon-img folder"></i>그룹명 : AMI (지능형원격검침)</div>
+                  <div class="mu-item-group fr">
+                    <button type="button" class="mu-btn mu-btn-icon" (click)="onClckAddSelectedService()"><i class="mu-icon-img trash"></i>삭제</button>
+                  </div>
+                  <div class="num">Total : 00건</div>
+                </div>
+                <!-- grid -->
+                <div class="mu-grid-scroll">
+                  <table class="mu-grid">
+                    <colgroup>
+                      <col width="80">
+                      <col>
+                      <col width="180">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="mu-checkbox">
+                            <input type="checkbox" id="ck_all" />
+                            <label for="ck_all"></label>
+                          </div>
+                        </th>
+                        <th>서비스 명</th>
+                        <th>관련 사업장 수</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <!-- scroll -->
+                  <div class="mu-scroll-v">
+                    <table class="mu-grid">
+                      <colgroup>
+                        <col width="80">
+                        <col>
+                        <col width="180">
+                      </colgroup>
+                      <tbody>
+                        <tr *ngFor="let item of lstSelectedService">
+                          <td class="tc">
+                            <div class="mu-checkbox">
+                              <input type="checkbox" id="u_{{item.svcCd}}" />
+                              <label for="u_{{item.svcCd}}"></label>
+                            </div>
+                          </td>
+                          <td><span>무선 원격 검침</span></td>
+                          <td class="tc">999,999</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //scroll -->
+                </div>
+                <!-- //grid -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 2번째 Tab 내용 -->
+        <div class="mu-tabCont" style="display:none;">
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- overlay Dialog -->
+<p-dialog [(visible)]="display" modal="modal"  [width]="480" [height]="400">
+	<div class="mu-dialog-head">
+		<span class="mu-title">{{wplcDetail.svcNm}}</span>
+		<button type="button" (click)="display=false;" class="mu-btn mu-btn-icon mu-btn-icon-only"><i class="mu-icon-img close"></i></button>
+	</div>
+	<div class="mu-dialog-body">
+		<div class="mu-grid-top">
+      <!--
+      <div class="num">Total :{{wplcDetail.datas.length}}건</div>
+      -->
+      <div class="num">Total : 0 건</div>
+		</div>
+		<!-- grid -->
+		<div class="mu-grid-scroll">
+			<table class="mu-grid">
+				<colgroup>
+					<col>
+					<col width="200">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>사업장명</th>
+						<th>사업자등록번호</th>
+					</tr>
+				</thead>
+			</table>
+			<!-- scroll -->
+			<div class="mu-scroll-v">
+				<table class="mu-grid">
+					<colgroup>
+						<col>
+						<col width="200">
+					</colgroup>
+					<tbody>
+						<tr *ngFor="let wplc of wplcDetail.datas">
+							<td>{{wplc.wplcNm}}</td>
+							<td class="tc">{{wplc.wplcCd}}</td>
+						</tr>						
+					</tbody>
+				</table>
+			</div>
+			<!-- //scroll -->
+		</div>
+		<!-- //grid -->
+	</div>
+	<div class="mu-dialog-foot mu-dialog-foot-1">
+		<button type="button" (click)="display=false;" class="mu-btn mu-btn-icon mu-btn-cancel">닫기</button>
+	</div>
+</p-dialog>
